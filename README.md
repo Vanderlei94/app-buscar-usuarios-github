@@ -28,7 +28,7 @@ O objetivo deste projeto é praticar habilidades de organização de código, co
 ### Funcionalidades
 
 - Buscar dados públicos de um usuário do GitHub ao digitar o nome de usuário.
-- Exibir informações como nome, avatar e biografia do usuário.
+- Exibir informações como nome, avatar, seguidores e biografia do usuário.
 - Listar os repositórios do usuário com links diretos.
 - Evitar buscas com campo vazio, exibindo uma mensagem de alerta.
 
@@ -75,6 +75,7 @@ Durante o desenvolvimento deste projeto, pratiquei:
    - Nome
    - Biografia
    - Lista de repositórios com links.
+   - Número de seguidores e seguindo no perfil
 4. Caso o campo de busca esteja vazio, uma mensagem de alerta será exibida.
 
 ## Contribuições
