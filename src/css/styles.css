@@ -134,7 +134,7 @@ main {
 /* REPOSITORIES */
 
 .container .profile-data .repositories h2{
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
@@ -151,6 +151,7 @@ main {
   display: block;
   border-radius: 7px;
   transition: 0.3s ease-in-out;
+  margin-bottom: 30px;
 }
 
 .container .profile-data .repositories ul li a:hover{
@@ -161,6 +162,21 @@ main {
 .container .profile-data.hide{
   display: none;
 }
+
+.events h2{
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.events ul li {
+  padding: 5px;
+  margin: 5px; 
+}
+
+.events ul li span{
+  font-weight: 700;
+}
+
 
 @media (max-width: 1280px) {
   .container {

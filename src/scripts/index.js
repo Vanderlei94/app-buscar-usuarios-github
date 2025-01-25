@@ -1,6 +1,7 @@
 import { getUser } from "./services/user.js"
 import { getRepositories } from "./services/repositories.js"
 import { getFollowers, getFollowing } from "./services/followers.js"
+import { getEvents } from "./services/events.js"
 
 import { user } from './objects/user.js'
 import { screen } from './objects/screen.js'
@@ -41,11 +42,13 @@ async function getUserData(userName) {
 
     const followersResponse = await getFollowers(userName)
     const followingResponse = await getFollowing(userName)
+    const eventsResponse = await getEvents(userName)
 
     user.setInfo(userResponse)
     user.setRepositories(repositoriesResponse)
     user.setFollowers(followersResponse)
     user.setFollowing(followingResponse)
+    user.setEvents(eventsResponse)
 
     screen.renderUser(user)
 }

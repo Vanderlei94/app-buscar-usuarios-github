@@ -10,6 +10,7 @@ const screen = {
                         <div class="followers">
                             <h2>👥 Seguindo: ${user.following.length} 👥 Seguidores: ${user.followers.length}</h2">
                         </div>
+                        
                 </div>
         </div>`
 
@@ -23,6 +24,29 @@ const screen = {
         </div>`
 
         }
+
+        
+        let filtredEvents = user.events.filter(event => event.type === "PushEvent" || event.type === "CreateEvent")
+        
+        let eventsItens = ''
+        filtredEvents.forEach(event => {
+            if(event.type === "PushEvent" && event.payload && event.payload.commits && event.payload.commits.length > 0) {
+                event.payload.commits.forEach(commit => {
+                    eventsItens += `<li><span>${event.repo.name}</span> - ${commit.message}</li>`;
+                });
+            } else {
+                eventsItens += `<li><span>${event.repo.name}</span> - Sem mensagem de
+ commit</li>`;
+            }
+        });
+        
+        if (filtredEvents.length > 0) {
+            this.userProfile.innerHTML += `<div class="events">
+            <h2>Eventos</h2>
+            <ul>${eventsItens}</ul>
+        </div>`
+    }
+        
     },
 
     renderNotFound(){
