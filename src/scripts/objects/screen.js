@@ -1,8 +1,8 @@
 const screen = {
     userProfile: document.querySelector('.profile-data'),
     renderUser(user) {
-        this.userProfile.innerHTML = 
-        `<div class="info">
+        this.userProfile.innerHTML =
+            `<div class="info">
                 <img src="${user.avatarUrl}" alt="Foto do poerfil do usuário"/>
                 <div class="data">
                     <h1>${user.name ?? 'Não possui nome cadastrado🥲'}</h1>
@@ -15,7 +15,14 @@ const screen = {
         </div>`
 
         let respositoriesItens = ''
-        user.repositories.forEach(repo => respositoriesItens += `<li><a href="${repo.html_url}" target="_blank">${repo.name}</a></li>`)
+        user.repositories.forEach(repo => respositoriesItens += `<li><a href="${repo.html_url}" target="_blank">${repo.name}
+                <ul class="repo-info">
+                    <li>🍴 ${repo.forks_count}</li>
+                    <li>⭐ ${repo.stargazers_count}</li>
+                    <li>👀 ${repo.watchers_count}</li>
+                    <li>📖 ${repo.language}</li>
+                </ul></a>
+            </li>`)
 
         if (user.repositories.length > 0) {
             this.userProfile.innerHTML += `<div class="repositories">
@@ -25,12 +32,12 @@ const screen = {
 
         }
 
-        
+
         let filtredEvents = user.events.filter(event => event.type === "PushEvent" || event.type === "CreateEvent")
-        
+
         let eventsItens = ''
         filtredEvents.forEach(event => {
-            if(event.type === "PushEvent" && event.payload && event.payload.commits && event.payload.commits.length > 0) {
+            if (event.type === "PushEvent" && event.payload && event.payload.commits && event.payload.commits.length > 0) {
                 event.payload.commits.forEach(commit => {
                     eventsItens += `<li><span>${event.repo.name}</span> - ${commit.message}</li>`;
                 });
@@ -39,17 +46,17 @@ const screen = {
  commit</li>`;
             }
         });
-        
+
         if (filtredEvents.length > 0) {
             this.userProfile.innerHTML += `<div class="events">
             <h2>Eventos</h2>
             <ul>${eventsItens}</ul>
         </div>`
-    }
-        
+        }
+
     },
 
-    renderNotFound(){
+    renderNotFound() {
         this.userProfile.innerHTML = "<h3>Usuário não encontrado</h3>"
     }
 }

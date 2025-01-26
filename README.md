@@ -23,13 +23,14 @@ O objetivo deste projeto é praticar habilidades de organização de código, co
 
 - Nome do usuário
 - Biografia
-- Lista de repositórios públicos
+- Lista de repositórios público
+- Últimos 10 eventos do tipo Create e Push
 
 ### Funcionalidades
 
 - Buscar dados públicos de um usuário do GitHub ao digitar o nome de usuário.
 - Exibir informações como nome, avatar, seguidores e biografia do usuário.
-- Listar os repositórios do usuário com links diretos.
+- Listar os repositórios do usuário com links diretos, informações de quantidade de Forks, Estrelas, Watchers e a Linguagem do repositório, e os últimos eventos do tipo create e push.
 - Evitar buscas com campo vazio, exibindo uma mensagem de alerta.
 
 ## Tecnologias Utilizadas

@@ -145,6 +145,7 @@ main {
 }
 
 .container .profile-data .repositories ul li a{
+  font-weight: 600;
   padding: 20px;
   border: 1px solid grey;  
   margin: 20px;
@@ -157,6 +158,14 @@ main {
 .container .profile-data .repositories ul li a:hover{
   background-color:hotpink;
   color: #fff
+}
+
+.repo-info li{
+  color: #fff;
+  background-color: #6959cc;
+  border-radius: 3px;
+  padding: 5px;
+  margin: 2px;
 }
 
 .container .profile-data.hide{
