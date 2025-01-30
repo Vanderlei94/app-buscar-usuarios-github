@@ -49,7 +49,6 @@ async function getUserData(userName) {
     user.setFollowers(followersResponse)
     user.setFollowing(followingResponse)
     user.setEvents(eventsResponse)
-    console.log(repositoriesResponse)
 
     screen.renderUser(user)
 }
